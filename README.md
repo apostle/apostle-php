@@ -126,6 +126,9 @@ echo $failures[1]->deliveryError();
 // "No template provided"
 ```
 
+## Requirements
+
+* PHP 5.4+
 
 ## Who
 Created with ♥ by [Mal Curtis](http://github.com/snikch) ([@snikchnz](http://twitter.com/snikchnz))

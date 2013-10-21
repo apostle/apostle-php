@@ -1,5 +1,6 @@
 # Apostle PHP
-PHP bindings for Apostle.
+
+PHP bindings for [Apostle.io](http://apostle.io)
 
 ## Installation
 

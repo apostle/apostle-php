@@ -1,5 +1,8 @@
 # Apostle PHP
 
+[![Build Status](https://travis-ci.org/apostle/apostle-php.png?branch=master)](https://travis-ci.org/apostle/apostle-php)
+[![Latest Stable Version](https://poser.pugx.org/apostle/apostle-php/v/stable.png)](https://packagist.org/packages/apostle/apostle-php)
+
 PHP bindings for [Apostle.io](http://apostle.io)
 
 ## Installation
@@ -11,7 +14,7 @@ Add `apostle/apostle-php` to `composer.json`.
 ```json
 {
     "require": {
-        "apostle/apostle-php": "0.1.0",
+        "apostle/apostle-php": "v0.1.0",
     }
 }
 ```

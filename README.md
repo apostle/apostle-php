@@ -117,6 +117,10 @@ echo $failures[1]->deliveryError();
 ```
 
 
+## Who
+Created with ♥ by [Mal Curtis](http://github.com/snikch) ([@snikchnz](http://twitter.com/snikchnz))
+
+
 ## Contributing
 
 1. Fork it

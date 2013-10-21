@@ -6,15 +6,24 @@ PHP bindings for [Apostle.io](http://apostle.io)
 
 ### With Composer
 
-    gem 'apostle'
+Add `apostle/apostle-php` to `composer.json`.
 
-And then execute:
+```json
+{
+    "require": {
+        "apostle/apostle-php": "0.1.0",
+    }
+}
+```
 
-    $ bundle
+### Without Composer
 
-Or install it yourself as:
+Download the [latest release](https://github.com/apostle/apostle-php/releases). Ensure `src` is in your autoload path. If you’re not using auto loading, require the following files:
 
-    $ gem install apostle
+* Apostle.php
+* Apostle\Queue.php
+* Apostle\Mail.php
+* Aposlte\UninitializedException.php
 
 ## Domain Key
 

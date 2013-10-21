@@ -41,12 +41,14 @@ class Queue extends Client
 			if(!isset($email->email) || $email->email == '')
 			{
 				$failures[] = $email;
+				$this->results["invalid"][] = $email;
 				$email->setDeliveryError("No email provided");
 				continue;
 			}
 			if(!isset($email->template) || $email->template == '')
 			{
 				$failures[] = $email;
+				$this->results["invalid"][] = $email;
 				$email->setDeliveryError("No template provided");
 				continue;
 			}

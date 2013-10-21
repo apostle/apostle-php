@@ -1,5 +1,5 @@
 {
-    "name": "apostle-php",
+    "name": "apostle/apostle-php",
     "type": "library",
     "description": "Apostle PHP Client",
     "keywords": ["apostle"],

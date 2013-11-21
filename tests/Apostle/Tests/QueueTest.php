@@ -12,9 +12,9 @@ class QueueTest extends TestCase
 	{
 		$queue = new Queue();
 
-		$this->assertEquals([], $queue->emails);
+		$this->assertEquals(array(), $queue->emails);
 		$queue->add("abc");
-		$this->assertEquals(["abc"], $queue->emails);
+		$this->assertEquals(array("abc"), $queue->emails);
 	}
 
 	public function testSize()
@@ -30,17 +30,17 @@ class QueueTest extends TestCase
 	{
 		$queue = new Queue();
 
-		$invalidTemplateMail = new Mail(null, ["email" => "user@example.org"]);
+		$invalidTemplateMail = new Mail(null, array("email" => "user@example.org"));
 		$invalidEmailMail = new Mail("slug");
 
 		$queue->add($invalidTemplateMail);
 		$queue->add($invalidEmailMail);
 
 		$queue->deliver();
-		$this->assertEquals([
-			"valid" => [],
-			"invalid" => [$invalidTemplateMail, $invalidEmailMail]
-		], $queue->results);
+		$this->assertEquals(array(
+			"valid" => array(),
+			"invalid" => array($invalidTemplateMail, $invalidEmailMail)
+		), $queue->results);
 	}
 
 	public function testDeliverSetFailures()
@@ -71,16 +71,16 @@ class QueueTest extends TestCase
 		\Apostle::instance()->deliver = true;
 
 		$queue = $this->getServiceBuilder()->get('queue');
-		$mail1 = new Mail("slug-1", ["email" => "user1@example.org"]);
-		$mail2 = new Mail("slug-2", ["email" => "user2@example.org", "foo" => "bar"]);
+		$mail1 = new Mail("slug-1", array("email" => "user1@example.org"));
+		$mail2 = new Mail("slug-2", array("email" => "user2@example.org", "foo" => "bar"));
 		$queue->add($mail1)->add($mail2);
 		$this->setMockResponse($queue, "delivery_200.http");
 
 		$this->assertEquals(true, $queue->deliver());
-		$this->assertRequestJson(["recipients" => [
-			"user1@example.org" => ["data" => [], "template_id" => "slug-1"],
-			"user2@example.org" => ["data" => ["foo" => "bar"], "template_id" => "slug-2"],
-		]]);
+		$this->assertRequestJson(array("recipients" => array(
+			"user1@example.org" => array("data" => array(), "template_id" => "slug-1"),
+			"user2@example.org" => array("data" => array("foo" => "bar"), "template_id" => "slug-2"),
+		)));
 
 	}
 }

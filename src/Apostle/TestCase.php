@@ -8,7 +8,7 @@ class TestCase extends \Guzzle\Tests\GuzzleTestCase
 
 	public function setUp()
 	{
-		\Apostle::setup("abc", ["deliver" => false]);
+		\Apostle::setup("abc", array("deliver" => false);
 	}
 
     protected function client()

@@ -7,16 +7,16 @@ use Guzzle\Service\Client;
 class Queue extends Client
 {
 
-	public $emails = [];
+	public $emails = array();
 	public $results;
 
 	public function __construct()
 	{
-		parent::__construct(\Apostle::instance()->deliveryHost, [
-			'request.options' => [
+		parent::__construct(\Apostle::instance()->deliveryHost, array(
+			'request.options' => array(
 				'exceptions' => false
-			]
-		]);
+			)
+		));
 	}
 
 	public function add($email)
@@ -32,9 +32,9 @@ class Queue extends Client
 
 	public function deliver(&$failures=null)
 	{
-		$recipients = [];
-		$failures = [];
-		$this->results = ["valid" => [], "invalid" => []];
+		$recipients = array();
+		$failures = array();
+		$this->results = array("valid" => array(), "invalid" => array());
 
 		foreach($this->emails as $email)
 		{
@@ -68,7 +68,7 @@ class Queue extends Client
 			return true;
 		}
 
-		$body = ["recipients" => $recipients];
+		$body = array("recipients" => $recipients);
 
 		$response = $this->post('/',
 			[

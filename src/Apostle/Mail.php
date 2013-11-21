@@ -54,10 +54,10 @@ class Mail
 
 	public function toArray()
 	{
-		$array = [];
+		$array = array();
 		foreach(self::$_attributes as $local => $remote)
 		{
-			if(!isset($this->$local) || $local == 'email' || $this->$local == [])
+			if(!isset($this->$local) || $local == 'email' || $this->$local == array())
 			{
 				continue;
 			}

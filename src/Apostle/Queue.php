@@ -71,10 +71,10 @@ class Queue extends Client
 		$body = array("recipients" => $recipients);
 
 		$response = $this->post('/',
-			[
+			array(
 				'ContentType' => 'application/json; charset=utf-8',
 				'Authorization' => 'Bearer ' . \Apostle::instance()->domainKey
-			],
+			),
 			json_encode($body)
 		)->send();
 

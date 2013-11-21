@@ -13,7 +13,7 @@ class Apostle
 	 */
 	public function __construct($domainKey, $config = array())
 	{
-		foreach(['deliver', 'deliveryUrl'] as $attr)
+		foreach(array('deliver', 'deliveryUrl') as $attr)
 		{
 			if(!isset($config[$attr]))
 			{
@@ -33,7 +33,7 @@ class Apostle
      * Shortcut for initializing the static Apostle instance
      * @return Apostle
      */
-	public static function setup($domainKey, $config = [])
+	public static function setup($domainKey, $config = array())
 	{
 		self::reset(new Apostle($domainKey, $config));
 	}

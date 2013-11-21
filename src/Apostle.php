@@ -11,7 +11,7 @@ class Apostle
 	/**
 	 * @param string $domainKey The key to authorise mail on this domain
 	 */
-	public function __construct($domainKey, $config = [])
+	public function __construct($domainKey, $config = array())
 	{
 		foreach(['deliver', 'deliveryUrl'] as $attr)
 		{

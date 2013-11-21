@@ -19,19 +19,19 @@ class Mail
 
 	protected $_error;
 
-	protected static $_attributes = [
+	protected static $_attributes = array(
 		"email" => "email",
 		"from" => "from",
 		"headers" => "headers",
 		"layoutId" => "layout_id",
 		"name" => "name",
 		"replyTo" => "reply_to"
-	];
+	);
 
-	public function __construct($template, $data = [])
+	public function __construct($template, $data = array())
 	{
 		$this->template = $template;
-		$this->headers = [];
+		$this->headers = array();
 
 		// Remove special values from the data array
 		foreach(self::$_attributes as $local => $remote)

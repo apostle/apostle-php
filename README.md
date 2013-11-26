@@ -131,7 +131,7 @@ echo $failures[1]->deliveryError();
 
 ## Requirements
 
-* PHP 5.4+
+* PHP 5.3+
 
 ## Who
 Created with ♥ by [Mal Curtis](http://github.com/snikch) ([@snikchnz](http://twitter.com/snikchnz))

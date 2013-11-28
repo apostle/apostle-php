@@ -28,6 +28,10 @@ Download the [latest release](https://github.com/apostle/apostle-php/releases). 
 * Apostle\Mail.php
 * Aposlte\UninitializedException.php
 
+#### Prerequisites
+
+* [Guzzle](http://docs.guzzlephp.org/en/latest/)
+
 ## Domain Key
 
 You will need to provide your apostle domain key to send emails.

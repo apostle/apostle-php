@@ -4,6 +4,8 @@ class Apostle
 {
 	private static $_instance;
 
+	const VERSION = '0.1.4';
+
 	public $deliver = true;
 	public $deliveryHost = 'http://deliver.apostle.io';
 	public $domainKey;

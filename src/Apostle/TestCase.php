@@ -57,6 +57,18 @@ class TestCase extends \Guzzle\Tests\GuzzleTestCase
         );
     }
 
+    protected function assertHeader($header, $value, $request = null)
+    {
+        if (!$request) $request = $this->getOnlyMockedRequest();
+
+        if (!($header = $request->getHeader($header)))
+            $this->fail("Missing header.");
+
+        $this->assertEquals(
+            $value,
+            $header->__toString()
+        );
+    }
     protected function assertRequestJson($object, $request = null)
     {
         if (!$request) $request = $this->getOnlyMockedRequest();

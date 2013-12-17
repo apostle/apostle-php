@@ -66,6 +66,17 @@ class QueueTest extends TestCase
 		$this->assertBearerToken("authtoken123");
 	}
 
+	public function testDeliverSendsClientHeader()
+	{
+		\Apostle::setup("authtoken123");
+
+		$queue = $this->getServiceBuilder()->get('queue');
+		$this->setMockResponse($queue, "delivery_200.http");
+
+		$this->assertEquals(true, $queue->deliver());
+		$this->assertHeader("Apostle-Client", "PHP/" . \Apostle::VERSION);
+	}
+
 	public function testDeliverSendsJsonRecipients()
 	{
 		\Apostle::instance()->deliver = true;

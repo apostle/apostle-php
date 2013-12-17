@@ -14,7 +14,7 @@ Add `apostle/apostle-php` to `composer.json`.
 ```json
 {
     "require": {
-        "apostle/apostle-php": "v0.1.2",
+        "apostle/apostle-php": "v0.1.4"
     }
 }
 ```

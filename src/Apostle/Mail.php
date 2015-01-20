@@ -16,6 +16,7 @@ class Mail
 	public $name;
 	public $replyTo;
 	public $template;
+	public $attachments;
 
 	protected $_error;
 
@@ -25,13 +26,15 @@ class Mail
 		"headers" => "headers",
 		"layoutId" => "layout_id",
 		"name" => "name",
-		"replyTo" => "reply_to"
+		"replyTo" => "reply_to",
+		"attachments" => "attachments"
 	);
 
 	public function __construct($template, $data = array())
 	{
 		$this->template = $template;
 		$this->headers = array();
+		$this->attachments = array();
 
 		// Remove special values from the data array
 		foreach(self::$_attributes as $local => $remote)
@@ -51,6 +54,14 @@ class Mail
 	{
 		$this->data[$name] = $value;
 	}
+
+    public function addAttachment($name, $content)
+    {
+		array_push($this->attachments, array(
+			"name" => $name,
+ 			"data" => base64_encode($content)
+		));
+    }
 
 	public function toArray()
 	{

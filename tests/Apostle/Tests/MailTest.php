@@ -29,6 +29,19 @@ class MailTest extends TestCase
 		$this->assertEquals(array("other" => "data", "more" => "data"), $mail->data);
 	}
 
+	public function testAddAttachments()
+	{
+		$mail = new Mail("slug", array(
+			"email" => "user@example.org",
+		));
+
+		$mail->addAttachment("test.txt", "test text");
+		$this->assertEquals(
+			array("name" => "test.txt", "data" => "dGVzdCB0ZXh0"),
+			$mail->attachments[0]
+		);
+	}
+
 	public function testSetter()
 	{
 		$mail = new Mail("slug");

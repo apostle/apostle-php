@@ -14,7 +14,7 @@ Add `apostle/apostle-php` to `composer.json`.
 ```json
 {
     "require": {
-        "apostle/apostle-php": "v0.1.4"
+        "apostle/apostle-php": "v0.1.5"
     }
 }
 ```
@@ -64,6 +64,14 @@ $mail->from = "support@apostle.io";
 $mail->replyTo = "doreply@apostle.io";
 $mail->website = "apostle.io"; // You can add any data your template needs
 
+$mail->deliver();
+```
+
+Attachments can be added by supplying a filename and content as a string.
+
+```php
+$mail = new Mail("template-slug");
+$mail->addAttachment("test.txt", "Some test text");
 $mail->deliver();
 ```
 
